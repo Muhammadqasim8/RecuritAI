@@ -35,7 +35,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
 const generateToken = (userId) => {
     return jwt.sign({ id: userId }, JWT_SECRET, { expiresIn: '1h' });
 };
-
+// registeration
 app.post('/register', async (req, res) => {
     const { name, email, password, role } = req.body; // role: 'recruiter' or 'job_seeker'
     if (!name || !email || !password || !role) {
