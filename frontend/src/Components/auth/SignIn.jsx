@@ -49,7 +49,7 @@ const SignIn = ({ onLoginSuccess }) => {
           <div className="mb-5">
             <img src={bufferlogo} alt="X Logo" className="w-12 mx-auto" />
           </div>
-          <h2 className="text-white font-bold text-2xl mb-5">Sign in to Buffer</h2>
+          <h2 className="text-white font-bold text-2xl mb-5">Sign in to RecuritAI</h2>
           <form className="flex flex-col" onSubmit={handleLogin}>
             <input
               type="email"
