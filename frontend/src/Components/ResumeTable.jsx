@@ -7,7 +7,7 @@ const ResumeTable = ({ resumes }) => {
         <h1 className="text-2xl font-bold text-center mb-6">Ranked Resumes</h1>
         <table className="w-full border-collapse border border-gray-200">
           <thead>
-            <tr className="bg-gray-200">
+          <tr className="bg-gray-200">
               <th className="border border-gray-300 px-4 py-2 text-left">Rank</th>
               <th className="border border-gray-300 px-4 py-2 text-left">Name</th>
               <th className="border border-gray-300 px-4 py-2 text-left">Email</th>
