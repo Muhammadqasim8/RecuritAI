@@ -25,7 +25,7 @@ const Features24 = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="py-12">
+    <div id="features" className="py-12">
       <h1 className='pt-4 pb-20 text-center text-3xl px-[4px] sm:text-5xl font-semibold text-[#2B2A2D] font-serif'>Features</h1>
       <div className="px-4 max-w-7xl mx-auto grid gap-8 lg:grid-cols-2">
         {/* Image Container */}

@@ -45,10 +45,10 @@ const SignIn = ({ onLoginSuccess }) => {
   return (
     <div className="bg-[#1e1e2e] flex justify-center items-center h-screen font-sans">
       <div className="flex justify-center items-center w-full h-full">
-        <div className="bg-black p-10 rounded-lg w-[400px] text-center shadow-lg">
-          <div className="mb-5">
+        <div className="bg-black p-10 rounded-lg w-[400px] text-center shadow-lg mt-32 mb-6">
+          {/* <div className="mb-5">
             <img src={bufferlogo} alt="X Logo" className="w-12 mx-auto" />
-          </div>
+          </div> */}
           <h2 className="text-white font-bold text-2xl mb-5">Sign in to RecuritAI</h2>
           <form className="flex flex-col" onSubmit={handleLogin}>
             <input

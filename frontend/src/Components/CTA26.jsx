@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ctaData = [
   {
@@ -10,6 +11,7 @@ const ctaData = [
 ];
 
 const CTA26 = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
   return (
     <div className="py-16">
       <div className="px-4 max-w-screen-xl mx-auto">
@@ -27,6 +29,7 @@ const CTA26 = () => {
               </div>
               <div className="flex flex-col items-end gap-6">
                 <button
+                onClick={() => navigate('/login')} // Navigate to Registration page
                   type="button"
                   className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-300"
                 >

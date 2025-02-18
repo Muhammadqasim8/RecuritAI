@@ -1,9 +1,8 @@
 import React from "react";
 
-
 const Login = () => {
   return (
-    <div className="flex justify-center items-center w-full h-full pt-28 pb-6 px-2">
+    <div className="flex justify-center items-center w-full h-full px-2 mt-16">
       <div className="bg-[#0f172a] p-10 rounded-lg w-[400px] text-center shadow-lg">
         <div className="mb-5">
           {/* <img src={logo} alt="X Logo" className="w-12 mx-auto text-white" /> */}

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
-import { HiMenu, HiX } from 'react-icons/hi';
-import logo from '../assets/logo1.svg'
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { HiMenu, HiX } from "react-icons/hi";
+import logo from "../assets/logo1.svg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,10 +13,10 @@ const Header = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -37,10 +37,20 @@ const Header = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="#">Features</a>
+                <a
+                  href="#features"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("features")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  Features
+                </a>
               </li>
               <li>
-                <a href="#">How it Works</a>
+                <Link href="/Steps">How it Works</Link>
               </li>
               <li>
                 <a href="#">FAQ</a>
@@ -57,8 +67,8 @@ const Header = () => {
             >
               Log In
             </Link>
-            <button 
-              onClick={() => navigate('/registration')} // Navigate to Registration page
+            <button
+              onClick={() => navigate("/registration")} // Navigate to Registration page
               className="bg-[#0f172a] text-white hover:text-[#0f172a] hover:bg-transparent border-2 border-[#0f172a] px-4 py-2 rounded-full transition-colors duration-300"
             >
               Get Started Now
@@ -95,8 +105,8 @@ const Header = () => {
             >
               Log In
             </Link>
-            <button 
-              onClick={() => navigate('/registration')} // Navigate to Registration page
+            <button
+              onClick={() => navigate("/registration")} // Navigate to Registration page
               className="bg-[#0f172a] text-white mt-4 hover:text-[#0f172a] hover:bg-transparent border-2 border-[#0f172a] px-4 py-2 rounded-full transition-colors duration-300"
             >
               Get Started Now
