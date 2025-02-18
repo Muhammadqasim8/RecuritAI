@@ -42,3 +42,48 @@ export const getProtectedData = async () => {
         throw new Error(error.response?.data?.message || 'Access denied');
     }
 };
+
+export const completeRecruiterProfile = async (profileData) => {
+    try {
+        const token = localStorage.getItem('token'); // Get auth token
+
+        if (!token) {
+            throw new Error('No token found. Please log in.');
+        }
+
+        const response = await axios.post(`${API_URL}/api/complete-profile/recruiter`, profileData, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        return response.data; // Success message from backend
+    } catch (error) {
+        throw new Error(error.response?.data?.message || 'Failed to complete recruiter profile.');
+    }
+};
+
+// Function to complete job seeker profile
+export const completeJobSeekerProfile = async (profileData) => {
+    try {
+        const token = localStorage.getItem('token'); // Get auth token
+
+        if (!token) {
+            throw new Error('No token found. Please log in.');
+        }
+
+        const response = await axios.post(`${API_URL}/api/complete-profile/job-seeker`, profileData, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        return response.data; // Success message from backend
+    } catch (error) {
+        throw new Error(error.response?.data?.message || 'Failed to complete job seeker profile.');
+    }
+};
+
+// export default AuthService;

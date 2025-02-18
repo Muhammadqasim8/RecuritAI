@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 
 const RecruiterOptions = () => {
@@ -15,6 +16,13 @@ const RecruiterOptions = () => {
           Recruiter Options
         </h2>
         <ul className="space-y-4">
+        <li
+            onClick={() => handleOptionClick("/complete-profile/recruiter")}
+            className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 cursor-pointer"
+          > 
+            Complete Profile 
+           </li>
+        
           <li
             onClick={() => handleOptionClick("/get-matched-resumes")}
             className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 cursor-pointer"

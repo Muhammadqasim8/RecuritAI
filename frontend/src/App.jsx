@@ -1,5 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Outlet, useNavigate } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+  useNavigate,
+} from 'react-router-dom';
+import Button from './Components/Button';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Hero from './Components/Hero';
@@ -15,15 +22,19 @@ import JoinRecruitAI from './Components/JoinRecruitAI';
 import RecruiterOptions from './Components/RecruiterOptions';
 import JobSeekerOptions from './Components/JobSeekerOptions';
 import UploadForm from './Components/UploadForm'; // New Component
+import RecruiterCompleteProfile from './Components/auth/RecruiterCompleteProfile'; // New Component
+import JobSeekerCompleteProfile from './Components/auth/JobSeekerCompleteProfile'; // New Component
 
+// Layout component wraps pages with common Header and Footer
 const Layout = () => (
   <div>
     <Header />
-    <Outlet /> {/* Outlet renders child components */}
+    <Outlet /> {/* Renders nested routes */}
     <Footer />
   </div>
 );
 
+// Login component that navigates to JoinRecruitAI after successful login
 const Login = () => {
   const navigate = useNavigate();
 
@@ -83,6 +94,16 @@ const App = () => {
         {/* Get Matched Resumes */}
         <Route path="/get-matched-resumes" element={<Layout />}>
           <Route index element={<UploadForm />} />
+        </Route>
+
+        {/* Recruiter Complete Profile */}
+        <Route path="/complete-profile/recruiter" element={<Layout />}>
+          <Route index element={<RecruiterCompleteProfile />} />
+        </Route>
+
+        {/* Job Seeker Complete Profile */}
+        <Route path="/complete-profile/job-seeker" element={<Layout />}>
+          <Route index element={<JobSeekerCompleteProfile />} />
         </Route>
       </Routes>
     </Router>
